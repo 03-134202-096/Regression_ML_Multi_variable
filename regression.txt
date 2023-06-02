@@ -1,0 +1,18 @@
+##############     LINEAR REGRESSION WITH MULTIPLE VARIABLE    ############################
+
+
+import numpy as np
+import pandas as pd
+from sklearn import linear_model
+from sklearn.impute import  SimpleImputer
+
+df = pd.read_csv(insurance_data - Copy.csv)
+
+mean_height=df['height'].mean()
+df.height=df['height'].fillna(mean_height)
+
+reg=linear_model.LinearRegression()
+reg.fit(df[['Age','height','weight']],df[['Premium']])
+print(reg.predict([[46,152.6925,23]]))
+print(df)
+
